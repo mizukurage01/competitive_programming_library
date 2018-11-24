@@ -18,7 +18,7 @@ long long extGcd(long long a, long long b, long long &p, long long &q) {
 // Chinese Remainder Theorem
 // x ≡ b1 (mod. m1)
 // x ≡ b2 (mod. m2)
-// > x ≡ r (mod. lcm(m1, m2))
+// >> x ≡ r (mod. lcm(m1, m2))
 // return (r, m) if there is a solution, else (0, -1)
 pair<long long, long long> ChineseRem(long long b1, long long m1, long long b2, long long m2) {
     long long p, q;
