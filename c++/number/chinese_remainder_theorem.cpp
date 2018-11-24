@@ -29,3 +29,17 @@ pair<long long, long long> ChineseRem(long long b1, long long m1, long long b2, 
     long long r = mod(b1 + m1 * tmp, m);
     return make_pair(r, m);
 }
+
+// Chinese Remainder Theorem (>2)
+pair<long long, long long> ChineseRem2(const vector<long long> &b, const vector<long long> &m) {
+    long long r = 0, M = 1;
+    for (int i = 0; i < (int)b.size(); ++i) {
+        long long p, q;
+        long long d = extGcd(M, m[i], p, q); // p is inv of M/d (mod. m[i]/d)
+        if ((b[i] - r) % d != 0) return make_pair(0, -1);
+        long long tmp = (b[i] - r) / d * p % (m[i]/d);
+        r += M * tmp;
+        M *= m[i]/d;
+    }
+    return make_pair(mod(r, M), M);
+}
