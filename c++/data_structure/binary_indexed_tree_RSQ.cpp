@@ -1,4 +1,4 @@
-problem: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
+// problem: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
 
 // 1-indexed
 
