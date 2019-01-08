@@ -1,4 +1,5 @@
 # verified by AOJ Single Source Shortest Path 1
+# http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_B&lang=jp
 
 # import heapq
 import heapq
