@@ -13,6 +13,7 @@ using namespace std;
 // lowerBoundなどを用いて、値でソートした木構造にすることもできるが、
 // 値でソートせず、配列をそのまま扱うような形で木構造を扱うこともできる。
 // それぞれに応じて、insertやeraseを作成している。
+// 0-indexed
 
 typedef long long VAL;
 long long INF = 1LL << 60;
@@ -75,7 +76,7 @@ struct Tree {
 
     inline int count(VAL val) {return this->lowerBound(this->root, val+1) - this->lowerBound(this->root, val);}
 
-
+    // k番目(0-indexed)の値を取得
     inline VAL get(node_t* t, int k) {
         if (!t) return -1;
         if (k == size(t->lch)) return t->val;
