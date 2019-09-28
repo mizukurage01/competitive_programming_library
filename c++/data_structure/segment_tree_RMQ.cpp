@@ -1,6 +1,6 @@
 // segment tree (Range Minimum Query)
 // 参考: http://tsutaj.hatenablog.com/entry/2017/03/29/204841
-int const INF = INT_MAX;
+int const INF = 1e9;
 
 struct SegmentTree {
 private:
