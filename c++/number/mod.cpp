@@ -1,25 +1,6 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <cstring>
-#include <algorithm>
-#include <cmath>
-#include <set>
-#include <map>
-#include <queue>
-#include <iomanip>
-#include <cassert>
-#include <random>
-#include <tuple>
-
-#define rep(i,n) for (int i = 0; i < (n); ++i)
-
-using namespace std;
 typedef long long ll;
-typedef pair<int, int> P;
 
 const int MOD = 1e9 + 7;
-
 const int MAX = 110000;
 ll fac[MAX], finv[MAX], inv[MAX];
 
