@@ -32,10 +32,3 @@ ll modpow(ll a, ll n, ll MOD) {
 }
 
 
-int main() {
-
-
-    return 0;
-
-}
-
