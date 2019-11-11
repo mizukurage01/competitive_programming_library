@@ -25,9 +25,11 @@ typedef pair<int, int> P;
 
 const int MAX_V = 10010;
 int V;
-int cmp[MAX_V]; // components of each vertex
+int cmp[MAX_V]; // components index of each vertex
 bool used[MAX_V];
-vector<int> g[MAX_V], rg[MAX_V], ng[MAX_V], vs;
+vector<int> g[MAX_V], rg[MAX_V], vs;
+vector<int> ng[MAX_V]; // degenerated graph
+int cnt[MAX_V]; // number of vertices in each component
 
 void add_edge(int from, int to) {
     g[from].push_back(to);
@@ -66,7 +68,9 @@ int scc() {
 }
 
 void new_graph(int k) {
+    memset(cnt, 0, sizeof(cnt));
     for (int v = 0; v < V; v++) {
+        cnt[cmp[v]]++;
         for (int nv: g[v]) {
             int x = cmp[v];
             int y = cmp[nv];
@@ -75,7 +79,6 @@ void new_graph(int k) {
         }
     }
 }
-
 
 int main() {
     int e; cin >> V >> e;
