@@ -20,6 +20,10 @@ struct RollingHash {
             powMemo[i+1] = CalcMod(Mul(powMemo[i], Base));
         }
     }
+    
+    inline uint64_t& operator[] (size_t idx) {
+        return hash[idx];
+    }
 
     inline uint64_t Slice(int start, int len) {
         return CalcMod(hash[start + len] + POSITIVIZER - Mul(hash[start], powMemo[len]));
@@ -57,7 +61,7 @@ int main() {
         string c; cin >> c;
         RollingHash rh_c(c);
         for (int j = 0; j < (int)s.size() - (int)c.size() + 1; j++) {
-            if (rh.Slice(j, c.size()) == rh_c.hash[c.size()]) ans++;
+            if (rh.Slice(j, c.size()) == rh_c[c.size()]) ans++;
         }
     }
     
