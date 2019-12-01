@@ -1,5 +1,5 @@
-Problem: https://yukicoder.me/problems/no/430
-Reference: https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
+// Problem: https://yukicoder.me/problems/no/430
+// Reference: https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
 
 struct RollingHash {
     const uint64_t MASK30 = (1uLL << 30) - 1;
@@ -20,13 +20,13 @@ struct RollingHash {
             powMemo[i+1] = CalcMod(Mul(powMemo[i], Base));
         }
     }
-    
+
     inline uint64_t& operator[] (size_t idx) {
-        return hash[idx];
+        return hash[idx+1]; // 0-indexed
     }
 
-    inline uint64_t Slice(int start, int len) {
-        return CalcMod(hash[start + len] + POSITIVIZER - Mul(hash[start], powMemo[len]));
+    inline uint64_t Slice(int i, int j) {
+        return CalcMod(hash[j] + POSITIVIZER - Mul(hash[i], powMemo[j-i])); // 0-indexed, [i, j)
     }
 
     inline uint64_t CalcMod(uint64_t val) {
@@ -57,11 +57,11 @@ int main() {
 
     int ans = 0;
     
-    for(i = 0; i < m; i++) {
+    rep(i, m) {
         string c; cin >> c;
         RollingHash rh_c(c);
         for (int j = 0; j < (int)s.size() - (int)c.size() + 1; j++) {
-            if (rh.Slice(j, c.size()) == rh_c[c.size()]) ans++;
+            if (rh.Slice(j, j + c.size()) == rh_c[c.size()-1]) ans++;
         }
     }
     
