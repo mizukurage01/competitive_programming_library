@@ -1,4 +1,4 @@
-# reference: https://lumakernel.github.io/ecasdqina/
+// reference: https://lumakernel.github.io/ecasdqina/
 
 const double pi = 3.1415926535897932384626433832795028841971;
 vector<complex<double> > dft(vector<complex<double> > a) {
