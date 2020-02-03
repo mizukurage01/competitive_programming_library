@@ -1,4 +1,3 @@
-
 struct LCA{
     vector<vector<int>> parent;
     vector<int> depth;
