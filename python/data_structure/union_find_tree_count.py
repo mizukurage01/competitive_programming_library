@@ -27,3 +27,6 @@ class UnionFind:
             self.parent[x] = y
             self.rank[y] += 1
             self.num[y] += self.num[x]
+
+    def size(self, x):
+        return self.num[self.find(x)]
