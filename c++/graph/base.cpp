@@ -27,3 +27,33 @@ vector<T> dijkstra(int s, Graph& g, T INF) {
     }
     return dist;
 }
+
+
+
+// Bellman-Ford: vector<tuple<int, int, int>> g;  g.emplace_back(from,to,cost)
+// Warshall-Floyd: vector<vector<int>> g(n, vector<int>(n,INF));
+
+
+// "Bellman-Ford"
+// vector<int> dist(n, INF);
+// int sv = 0;
+// dist[sv] = 0;
+// bool update = true;
+// int iter = 0;
+// while (update) {
+//     update = false;
+//     rep(i, m) {
+//         int from, to, cost;
+//         tie(from, to, cost) = g[i];
+//         int newdist = dist[from] + cost;
+//         if (dist[to] > newdist) {
+//             update = true;
+//             dist[to] = newdist;
+//         }
+//     }
+//     iter++;
+//     if (iter > n) {
+//         cout << -1 << endl;
+//         return 0;
+//     }
+// }
