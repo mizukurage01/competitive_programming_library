@@ -1,14 +1,15 @@
+typedef pair<int, int> P;
+
+using Graph = vector<vector<Edge>>;
+
 struct Edge{
     int to; int cost;
     Edge(int t, int c): to(t), cost(c) { }
 };
-using Graph = vector<vector<Edge>>;
 
-typedef pair<int, int> P;
-
-int n;
+int MAX_V;
 vector<int> dijkstra(int s, Graph& g) {
-    vector<int> dist(n, 1e9);
+    vector<int> dist(MAX_V, 1e9);
     dist[s] = 0;
     priority_queue<P, vector<P>, greater<P>> pq;
     pq.push(P(0, s));
@@ -28,7 +29,6 @@ vector<int> dijkstra(int s, Graph& g) {
     }
     return dist;
 }
-
 
 // Graph g(100);
 // g[0].push_back(Edge(to, cost));
