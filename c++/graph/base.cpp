@@ -6,9 +6,9 @@ struct Edge{
 };
 using Graph = vector<vector<Edge>>;
 
-int MAX_V;
+int MAX_V = 300;
 vector<int> dijkstra(int s, Graph& g) {
-    vector<int> dist(MAX_V, 1e9);
+    vector<int> dist(MAX_V, INF);
     dist[s] = 0;
     priority_queue<P, vector<P>, greater<P>> pq;
     pq.push(P(0, s));
