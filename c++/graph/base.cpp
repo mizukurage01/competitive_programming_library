@@ -1,11 +1,10 @@
 typedef pair<int, int> P;
 
-using Graph = vector<vector<Edge>>;
-
 struct Edge{
     int to; int cost;
     Edge(int t, int c): to(t), cost(c) { }
 };
+using Graph = vector<vector<Edge>>;
 
 int MAX_V;
 vector<int> dijkstra(int s, Graph& g) {
